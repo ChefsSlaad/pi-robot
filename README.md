@@ -9,3 +9,6 @@ materialen:
 * 2x 3.7v batterijen (http://www.accu-company.nl/nl/batterij/581-accu-18650-li-ion-fenex.html)
 * draadjes en weerstanden 
 
+
+Sources / Links
+https://diyhacking.com/make-line-follower-robot/
