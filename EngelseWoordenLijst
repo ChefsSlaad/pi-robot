@@ -1,2 +1,30 @@
--Controls
--Biet
+- Distance = Afstand
+- Time = tijd
+- On = aan
+- off = uit
+- Controls
+- GND = 0 = '-'
+
+
+
+
+
+Afstandssensor ( Distance sensor)
+Werkt door het verschil tussen de 2 ogen te meten. 
+Hij zend uit het ene oog (T) en ontvangt in het 2e oog (R).
+Uit het verschil kan de sensor de afstand meten
+
+Op de sensor
+- VCC = 5V is de spanning waarop het werkt
+- GND = aarde = 0V
+- ECHO = Waarde van opgevangen signaal
+- Trig(ger) = Waarde van verzonden signaal 
+
+Aansluiten
+[schema] met weerstanden
+
+
+RGB led 
+- weerstand op de GND 
+
+
