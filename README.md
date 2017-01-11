@@ -16,3 +16,8 @@ Sources / Links
 
 Video Streaming to webpage ( om de besturing via een webserver te doen, met videostreaming :))
 * https://github.com/miguelgrinberg/flask-video-streaming
+
+motor resources:
+bedrading van het motor controlw bordje:
+dedicated library - https://github.com/lipoja/AMSpi
+voorbeeld zonder controle bordje (alleen de chips) http://fritzing.org/projects/raspberry-pi-dual-dc-motor/
