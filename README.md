@@ -13,3 +13,6 @@ materialen:
 Sources / Links
 * https://diyhacking.com/make-line-follower-robot/
 * https://gpiozero.readthedocs.io/en/v1.3.1/
+
+Video Streaming to webpage ( om de besturing via een webserver te doen, met videostreaming :))
+* https://github.com/miguelgrinberg/flask-video-streaming
