@@ -1,10 +1,11 @@
 import gpiozero
 import time
 from datetime import datetime
+from curses import wrapper
 
 
 def now():
-    return datetime.now().time()
+    return datetime.now().time().strftime('%H:%M:%S:%f')
 
 
 class auto:
@@ -25,69 +26,74 @@ class auto:
         self.vaart = 0
         
 
-    def vooruit(self, duur = 0.5):
-        print(now(), 'vooruit - snelheid', self.vaart, ';', duur, 'sec')
+    def vooruit(self):
         for m in self.alle_motors:
             m.forward(self.vaart)
-        time.sleep(duur)
 
     def stop(self):
-        print(now(),'stop')
         for m in self.alle_motors:
             m.stop()
 
-    def achteruit(self, duur = 0.5):
-        print(now(), 'achteruit - snelheid', self.vaart, ';', duur, 'sec')
+    def achteruit(self):
         for m in self.alle_motors:
             m.backward(self.vaart)
-        time.sleep(duur)
  
-    def links(self, duur = 0.5):
-        print(now(), 'links - snelheid', self.vaart, ';', duur, 'sec')
+    def links(self):
         for m in self.links_motors:
             m.forward(self.vaart)
-        time.sleep(duur)
 
-    def rechts(self, duur = 0.5):
-        print(now(), 'rechts - snelheid', self.vaart, ';', duur, 'sec')
+    def rechts(self):
         for m in self.rechts_motors:
             m.forward(self.vaart)
-        time.sleep(duur)
 
-    def rechts_as(self, duur = 0.5):
-        print(now(), 'rechts om de as - snelheid', self.vaart, ';', duur, 'sec')
+    def rechts_as(self):
         for m in self.rechts_motors:
             m.forward(self.vaart)
         for m in self.links_motors:
             m.backward(self.vaart)
-        time.sleep(duur)
 
-    def links_as(self, duur = 0.5):
-        print(now(), 'links om de as - snelheid', self.vaart, ';', duur, 'sec')
+    def links_as(self):
         for m in self.links_motors:
             m.forward(self.vaart)
         for m in self.rechts_motors:
             m.backward(self.vaart)
-        time.sleep(duur)
 
 
+def main(scherm):
+    r = 0
+    scherm.clear()
+    run = True
+    while run:
+        scherm.refresh()
+        key = scherm.getkey()
+        if key == 'KEY_UP':
+            robot.vooruit()
+            richting = 'vooruit'
+        elif key == 'KEY_LEFT':
+            robot.links_as()
+            richting = 'links'
+        elif key == 'KEY_DOWN':
+            robot.achteruit()
+            richting = 'achteruit'
+        elif key == 'KEY_RIGHT':
+            robot.rechts_as()
+            richting = 'rechts'
+        elif key =='q':
+            run = False
+        else:
+            robot.stop()
+            richting = 'stop'
+        scherm.addstr(r,0, now() + ' ' + richting)
+        time.sleep(0.1)
+        r=r+1
+        if r > 40:
+            r = 0
+            scherm.clear()
 
 if __name__ == "__main__":
     robot = auto()
     robot.vaart = 1
-
-    while True:
-        key = input('?')
-        if key == 'w':
-            robot.vooruit()
-        elif key == 'a':
-            robot.links_as()
-        elif key == 's':
-            robot.achteruit()
-        elif key == 'd':
-            robot.rechts_as()
-        else:
-            robot.stop()
+    wrapper(main)
 
         
 
