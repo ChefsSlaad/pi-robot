@@ -9,6 +9,13 @@ def now():
 
 
 class auto:
+# auto heeft 4 motoren die we aan kunnen sturen. elke motor kan met 
+# een vaste vaart voor- of achteruit. de wielen heten (voorspelbaar)
+# links_voor, rechts_voor, links_achter en rechts_achter.
+# verder heeft de auto de volgende methoden (dingen die hij kan doen)
+# stop(), vooruit(), achteruit(), links() en rechts()
+# links_as() en rechts_as() zorgen dat de auto linksom dan wel rechtsom 
+# om zijn eigen as draait.
 
     def __init__(self):
 
@@ -23,7 +30,7 @@ class auto:
 #        self.voor = (links_voor, rechts_voor)
 #        self.achter = (links_achter, rechts_achter)
       
-        self.vaart = 0
+        self.vaart = 1
         
 
     def vooruit(self):
@@ -35,15 +42,20 @@ class auto:
             m.stop()
 
     def achteruit(self):
-        for m in self.alle_motors:
+        for m in self.alle_motors: 
             m.backward(self.vaart)
  
     def links(self):
-        for m in self.links_motors:
+        # linker motors staan stil, rechter motors draaien
+        for m i self._links_motors:
+            m.stop()
+        for m in self.rechts_motors: 
             m.forward(self.vaart)
 
     def rechts(self):
-        for m in self.rechts_motors:
+        for m in self.rechts_motorss:
+            m.stop()
+        for m in self.links_motors:
             m.forward(self.vaart)
 
     def rechts_as(self):
