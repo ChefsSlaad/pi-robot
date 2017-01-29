@@ -5,10 +5,10 @@ import time
 # de wielen worden eerst 1-voor-1 getest, daarna samen
 
 
-links_voor     = gpiozero.Motor(forward=6, backward=13)
+links_voor     = gpiozero.Motor(forward=13, backward=6)
 rechts_voor    = gpiozero.Motor(forward=12, backward=16)
-links_achter   = gpiozero.Motor(forward=19, backward=26)
-rechts_achter  = gpiozero.Motor(forward=20, backward=21)
+links_achter   = gpiozero.Motor(forward=26, backward=19)
+rechts_achter  = gpiozero.Motor(forward=21, backward=20)
 
 alle_motors = (links_voor, links_achter, rechts_voor, rechts_achter)
 links = (links_voor, links_achter)
