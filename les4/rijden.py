@@ -47,7 +47,7 @@ class auto:
  
     def links(self):
         # linker motors staan stil, rechter motors draaien
-        for m i self._links_motors:
+        for m in self._links_motors:
             m.stop()
         for m in self.rechts_motors: 
             m.forward(self.vaart)
