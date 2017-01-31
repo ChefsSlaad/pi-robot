@@ -13,9 +13,9 @@ while doorgaan: # hier zeggen we dus dat zolang de voorwaarde (doorgaan) waar is
 
     invoer = input('w=voor, a=links, d=rechts, s=achter, q=exit')
     
-    if invoer = 'q':
+    if invoer == 'q':
         doorgaan = False # als je op q drukt dan wordt doorgaan onwaar en sluit de loop
-    elif invoer = 'w':
+    elif invoer == 'w':
         print('vooruit')
         # welk commando zou je hier kunnen gebruiken om de auto vooruit te laten bewegen?
         # tip: kijk eens naar het programma dat we gebruikt hebben om te testen of de 
