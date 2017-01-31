@@ -27,8 +27,8 @@ class auto:
         self.alle_motors = (self.links_voor, self.links_achter, self.rechts_voor, self.rechts_achter)
         self.links_motors = (self.links_voor, self.links_achter)
         self.rechts_motors = (self.rechts_voor, self.rechts_achter)
-#        self.voor = (links_voor, rechts_voor)
-#        self.achter = (links_achter, rechts_achter)
+#        self.voor_motors = (links_voor, rechts_voor)
+#        self.achter_motors = (links_achter, rechts_achter)
       
         self.vaart = 1
         
@@ -106,6 +106,3 @@ if __name__ == "__main__":
     robot = auto()
     robot.vaart = 1
     wrapper(main)
-
-        
-
