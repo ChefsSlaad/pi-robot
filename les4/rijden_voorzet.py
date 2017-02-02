@@ -11,7 +11,7 @@ while doorgaan: # hier zeggen we dus dat zolang de voorwaarde (doorgaan) waar is
     # je kunt input() aan een variabele toewijzen. Dat hebben we in les 2 ook gedaan met de 
     # afstand sensor. Bijvoorbeeld met invoer = input('typ iets en druk op enter')
 
-    invoer = input('w=voor, a=links, d=rechts, s=achter, q=exit')
+    invoer = input('Tik een van de letters: w=voor, a=links, d=rechts, s=achter, q=exit')
     
     if invoer == 'q':
         doorgaan = False # als je op q drukt dan wordt doorgaan onwaar en sluit de loop
