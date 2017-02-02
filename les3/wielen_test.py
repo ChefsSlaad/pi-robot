@@ -25,6 +25,11 @@ rechts = (rechts_voor, rechts_achter)
 # doordraaien moeten we het programma vertellen dat het even moet wachten. 
 # Hier doen we dat met het commando time.sleep(1) - Letterlijk - doe 1 seconde niets
 # 
+# Voor iederen 'motor variabele', zoals 'alle_motors', kun je 3 functies gebruiken.
+# 1 .forward() // naar voren toe, 
+# 2 .backward() // naar achteren toe
+# 3 .stop() uit...
+#
 # vraag: waarom eindigt elk blok met <motor>.stop()?
 
 print('links voor')
