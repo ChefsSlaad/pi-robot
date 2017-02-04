@@ -4,10 +4,11 @@ www.technikids.nl
 
 materialen:
 * robot (http://www.dx.com/p/four-wheel-drive-smart-robot-car-chassis-for-4wd-yellow-black-2-x-18650-178466)
-* L293D motor control shield (http://www.dx.com/product/keyes-l293d-motor-control-shield-motor-drive-expansion-board-for-arduino-blue-227033)
+* 2x L293D motor control shield (https://www.aliexpress.com/item/Mini-Motor-Drive-Shield-Expansion-Board-L293D-Module-For-Arduino-UNO-MEGA-2560/2036886189.html)
 * camera voor raspberry pi (https://www.sossolutions.nl/raspberry-camera-module-v2)
 * raspberry pi (https://www.sossolutions.nl/raspberry-pi-model-3b)
 * 2x 3.7v batterijen (http://www.accu-company.nl/nl/batterij/581-accu-18650-li-ion-fenex.html)
+* powerbank https://www.allekabels.nl/searchresult.php?keyword=1392969
 * draadjes en weerstanden 
 
 
@@ -16,7 +17,7 @@ Sources / Links
 * https://gpiozero.readthedocs.io/en/v1.3.1/
 
 Video Streaming to webpage ( om de besturing via een webserver te doen, met videostreaming :))
-* https://github.com/miguelgrinberg/flask-video-streaming
+* http://elinux.org/RPi-Cam-Web-Interface
 
 motor resources:
 bedrading van het motor controlw bordje:
