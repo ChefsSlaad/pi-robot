@@ -1,0 +1,50 @@
+
+.move_icon { 
+    height: 40px;
+    width: 40px;
+    
+}
+
+
+#arrow_left_up {
+    -webkit-transform: rotate(45deg); /* Safari */
+    transform: rotate(45deg);
+}
+
+
+#arrow_up {
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg);
+}
+
+#arrow_right_up {
+    -webkit-transform: rotate(135deg); /* Safari */
+    transform: rotate(135deg);
+}
+
+#arrow_left_rotate {
+    -webkit-transform: rotate(0deg); /* Safari */
+    transform: rotate(0deg);
+}
+
+#arrow_right_rotate {
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+}
+
+#arrow_left_down {
+    -webkit-transform: rotate(315deg); /* Safari */
+    transform: rotate(315deg);
+}
+
+#arrow_down {
+    -webkit-transform: rotate(270deg); /* Safari */
+    transform: rotate(270deg);
+}
+
+#arrow_right_down {
+    -webkit-transform: rotate(225deg); /* Safari */
+    transform: rotate(225deg);
+}
+
+
