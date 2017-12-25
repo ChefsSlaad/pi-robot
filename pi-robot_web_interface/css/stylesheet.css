@@ -1,15 +1,8 @@
-
-
-
-.move_icon { 
+.move_icon {  /* the icons*/
     height: 15vh;
     max-height: 33vw;
     width: 15vh;
     max-width: 33vw;            
-}
-
-.buttons_row {
-
 }
 
 .buttons_row * {display: inline;}
@@ -19,7 +12,6 @@
 .right {margin: auto 0 auto auto;}
 
 
-
 #move_buttons {
     width: 50vh;
     min-width: 110vw;
@@ -27,7 +19,6 @@
     position: fixed;
     bottom: 1vh;
     left: 50%;
-
 }
 
 #arrow_left_up {-webkit-transform: rotate(45deg); transform: rotate(45deg);}
