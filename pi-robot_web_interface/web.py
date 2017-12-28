@@ -13,7 +13,6 @@ def page_get():
     print ('returning main page')
     return static_file('index.html', root='html')
 
-
 @route('/<filename:re:.*\.(js)$>')
 def js_file_return(filename):
     return static_file(filename, root='js')
@@ -26,6 +25,10 @@ def css_file_return(filename):
 def css_file_return(filename):
     return static_file(filename, root='image')
 
+@route('/<filename:re:.*\.(html)$>')
+def js_file_return(filename):
+    print ('returning', filename)
+    return static_file(filename, root='html')
 
 @route('/action=<parameter>')
 # the robot is expected to be driven through the web interface.

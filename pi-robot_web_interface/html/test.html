@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <script src="script.js"></script>
+    <style>
+    #box1 {
+        width: 200px;
+        height: 200px;
+        background-color:#00ffff;
+        margin: 100px;
+        border: 1px solid blue;
+        }
+    </style>
+    <script>
+window.addEventListener('load', function(){
+    document.getElementById('box2').addEventListener('touchstart', function(){box1_pushing = setInterval(updatestatus, 500, "box2")});
+    document.getElementById('box2').addEventListener('touchend', function(){clearInterval(box1_pushing)});
+    document.getElementById('box2').addEventListener('click', function(){updatestatus('jevader')});
+})
+var box1_pushing
+
+var triggercounter = 0
+    
+function updatestatus (who) {
+    triggercounter += 1
+    var response = " I've done this " + triggercounter + " times "+who;
+    document.getElementById('status').innerHTML = response;
+}
+
+function list_ids() {
+    var all_ids = document.querySelectorAll('*[id]');
+    var id_names ="";
+
+    for (var i=0, max=all_ids.length; i < max; i++) {
+        id_names = id_names +"<br>"+ all_ids[i].id;
+    }
+    document.getElementById('status').innerHTML = id_names;
+}
+
+    </script>
+
+  </head>
+
+  <body>
+  <div>
+  <div id="box2"> <div id="box1">test</div> </div>
+  <div id="status"> status </div>
+  <button id="button1" onclick="list_ids()">press me</button>
+  </body>
+

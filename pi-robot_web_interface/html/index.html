@@ -3,29 +3,28 @@
   <head>
     <title>Robot</title>
     <script src="script.js"></script>
-	<link rel="stylesheet" href="style_minified.css" />
 	<link rel="stylesheet" href="stylesheet.css" />
   </head>
 
-  <body onload="setTimeout('init(0,25,1);', 100);">
+  <body>
     <center>
       <div id="camera_viewport"><img id="mjpeg_dest" onclick="toggle_fullscreen(this);" /></div>
     </center>
 		<div id="move_buttons">
   		<div id="forwards_buttons" class="buttons_row">
-          <img id="arrow_left_up" class="move_icon left" src="basic_arrow.png" onclick="action('forward_left')">
-          <img id="arrow_up"  class="move_icon center" src="basic_arrow.png" onclick="action('forward')">
-          <img id="arrow_right_up" class="move_icon right" src="basic_arrow.png" onclick="action('forward_right')">
+          <img id="arrow_left_up" class="move_icon left" src="basic_arrow.png">
+          <img id="arrow_up"  class="move_icon center" src="basic_arrow.png">
+          <img id="arrow_right_up" class="move_icon right" src="basic_arrow.png">
         </div>
 		<div id="rotate_buttons"  class="buttons_row">
-          <img id="arrow_left_rotate" class="move_icon left" src="arrow_semi_circle.png" onclick="action('rotate_left')">
- 		  <img id="stop" class="move_icon center" src="stop.png" onclick="action('stop')">
-          <img id="arrow_right_rotate" class="move_icon right" src="arrow_semi_circle.png" onclick="action('rotate_right')">
+          <img id="arrow_left_rotate" class="move_icon left" src="arrow_semi_circle.png">
+ 		  <img id="stop" class="move_icon center" src="stop.png">
+          <img id="arrow_right_rotate" class="move_icon right" src="arrow_semi_circle.png">
 		</div>
   		<div id="backwards_buttons"  class="buttons_row">
-          <img id="arrow_left_down" class="move_icon left" src="basic_arrow.png" onclick="action('backward_left')">
- 		  <img id="arrow_down" class="move_icon center" src="basic_arrow.png" onclick="action('backward')">
-          <img id="arrow_right_down" class="move_icon right" src="basic_arrow.png" onclick="action('backward_right')">
+          <img id="arrow_left_down" class="move_icon left" src="basic_arrow.png">
+ 		  <img id="arrow_down" class="move_icon center" src="basic_arrow.png">
+          <img id="arrow_right_down" class="move_icon right" src="basic_arrow.png">
 		</div>
     </div>
 
