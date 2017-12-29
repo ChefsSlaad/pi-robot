@@ -2,14 +2,16 @@
 <html>
   <head>
     <title>Robot</title>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
     <script src="script.js"></script>
 	<link rel="stylesheet" href="stylesheet.css" />
   </head>
 
   <body>
-    <center>
-      <div id="camera_viewport"><img id="mjpeg_dest" onclick="toggle_fullscreen(this);" /></div>
-    </center>
+    <div id="main">
+        <div id="camera_viewport"><img id="camera_img" onclick="refreshCamera()" src="camera.jpg"></div>
+
 		<div id="move_buttons">
   		<div id="forwards_buttons" class="buttons_row">
           <img id="arrow_left_up" class="move_icon left" src="basic_arrow.png">
@@ -27,6 +29,6 @@
           <img id="arrow_right_down" class="move_icon right" src="basic_arrow.png">
 		</div>
     </div>
-
+    </div>
 
 </body>

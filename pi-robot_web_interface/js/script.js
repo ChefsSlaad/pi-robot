@@ -54,3 +54,8 @@ function action(actionStr){
     xmlHttp.send(null);
 };
 
+function refreshCamera() {
+    $('#camera_img').attr('src','camera.jpg#' + new Date().getTime());
+};
+
+

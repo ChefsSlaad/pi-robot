@@ -9,7 +9,6 @@ from bottle import route, request, run, template, static_file
 @route('/')
 def page_get():
 # simple return for for all pages
-    html_page = '<body><p>the simplest page ever<p></body>'
     print ('returning main page')
     return static_file('index.html', root='html')
 
@@ -24,6 +23,10 @@ def css_file_return(filename):
 @route('/<filename:re:.*\.(jpg|jpeg|gif|png|bmp)$>')
 def css_file_return(filename):
     return static_file(filename, root='image')
+
+@route('/camera.jpg')
+def camera_file_return():
+    return static_file('camera.jpg', root='camera')
 
 @route('/<filename:re:.*\.(html)$>')
 def js_file_return(filename):
