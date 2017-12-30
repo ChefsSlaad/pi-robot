@@ -26,7 +26,7 @@ function updatestatus (who) {
     triggercounter += 1
     var response = " I've done this " + triggercounter + " times "+who;
     document.getElementById('status').innerHTML = response;
-}
+};
 
 function list_ids() {
     var all_ids = document.querySelectorAll('*[id]');
@@ -36,7 +36,11 @@ function list_ids() {
         id_names = id_names +"<br>"+ all_ids[i].id;
     }
     document.getElementById('status').innerHTML = id_names;
-}
+};
+
+function show_host_name() {
+    document.getElementById('status').innerHTML = location.hostname;
+    }
 
     </script>
 
@@ -47,5 +51,7 @@ function list_ids() {
   <div id="box2"> <div id="box1">test</div> </div>
   <div id="status"> status </div>
   <button id="button1" onclick="list_ids()">press me</button>
+  <button id="button2" onclick="show_host_name()">I give the hostname</button>
+
   </body>
 

@@ -20,8 +20,6 @@
     display: block;
 }
 
-
-
 #move_buttons {
     width: 50vh;
     min-width: 110vw;
@@ -39,10 +37,8 @@
 #arrow_left_up {-webkit-transform: rotate(45deg); transform: rotate(45deg);}
 #arrow_up {-webkit-transform: rotate(90deg); transform: rotate(90deg);}
 #arrow_right_up {-webkit-transform: rotate(135deg); transform: rotate(135deg);}
-
 #arrow_left_rotate {-webkit-transform: scaleX(-1); transform: scaleX(-1);}
 #arrow_right_rotate {-webkit-transform: rotate(0deg); transform: rotate(0deg);}
-
 #arrow_left_down {-webkit-transform: rotate(315deg); transform: rotate(315deg);}
 #arrow_down {-webkit-transform: rotate(270deg); transform: rotate(270deg);}
 #arrow_right_down {-webkit-transform: rotate(225deg); transform: rotate(225deg);}

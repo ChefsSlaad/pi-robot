@@ -1,5 +1,6 @@
 window.addEventListener('load', initialize_page);
-                  
+
+var host = location.hostname;         
 var forward_left
 var forward
 var forward_right
@@ -43,7 +44,7 @@ window.oncontextmenu = function(event) {
 
 
 function action(actionStr){
-    var theUrl = "action="+actionStr;
+    var theUrl = "host:8080/action="+actionStr;
     var xmlHttp = new XMLHttpRequest();
     console.log(theUrl);
     xmlHttp.onreadystatechange = function() { 
