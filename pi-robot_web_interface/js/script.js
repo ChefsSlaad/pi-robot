@@ -44,7 +44,7 @@ window.oncontextmenu = function(event) {
 
 
 function action(actionStr){
-    var theUrl = "host:8080/action="+actionStr;
+    var theUrl = host+":8080/action="+actionStr;
     var xmlHttp = new XMLHttpRequest();
     console.log(theUrl);
     xmlHttp.onreadystatechange = function() { 
