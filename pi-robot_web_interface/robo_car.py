@@ -20,7 +20,11 @@ class robo_car:
 # om zijn eigen as draait.
 
     def __init__(self):
-
+        self.valid_go       = ('stop', 'forward', 'backward', 
+                               'rotate_left', 'rotate_right', 
+                               'forward_left', 'forward_right', 
+                               'backward_left', 'backward_right')
+                               
         self.left_front     = gpiozero.Motor(forward=6, backward=13)
         self.right_front    = gpiozero.Motor(forward=12, backward=16)
         self.left_back      = gpiozero.Motor(forward=19, backward=26)
@@ -31,10 +35,53 @@ class robo_car:
         self.right_motors = (self.right_front, self.right_back)
 #        self.voor_motors = (left_front, right_front)
 #        self.achter_motors = (left_back, right_back)
-      
+
+        self.command_list = []
+        self.current_command = 'stop'
         self.speed = 1
         
 
+    def go(self, direction):
+        if direction not in self.valid_go:
+            raise ValueError('{} is not a valid direction. accepted values are {}'.format(direction, self.valid_go)) 
+
+        if direction == 'forward':
+            self.forward()
+        elif direction == 'backward':
+            self.backward()
+        elif direction == 'forward_left':
+            self.left_forward()
+        elif direction == 'forward_right':
+            self.right_forward()
+        elif direction == 'backward_left':
+            self.left_backward()
+        elif direction == 'backward_right':
+            self.right_backward()
+        elif direction == 'rotate_left':
+            self.rotate_left()
+        elif direction == 'rotate_right':
+            self.rotate_right()
+        else:
+            self.stop()
+            
+    def run(self, ms = 500, scripted = False):
+        while True:
+            direction = 'stop'
+            if len(self.command_list) > 0:
+                if not scripted:
+                    direction = self.command_list.pop():  #most recent item from the list
+                    self.command_list = []                #empty list -> only listen for new commands 
+                else:
+                    direction = self.command_list.pop(0): #first item from the list
+            if direction == 'stop':
+                self.speed = 0
+            else:
+                print('going {} for {} ms'.format(direction, ms))
+                self.speed = min( self.speed + 0.25, 1)
+            
+            self.go(direction)
+            time.sleep(ms/1000)
+        
     def forward(self):
         for m in self.all_motors:
             m.forward(self.speed)
@@ -86,6 +133,8 @@ class robo_car:
             m.backward(self.speed)
 
 
+
+
 def main(scherm):
     r = 0
     scherm.clear()
@@ -97,13 +146,13 @@ def main(scherm):
             robot.forward()
             richting = 'vooruit'
         elif key == 'KEY_LEFT':
-            robot.links_as()
+            robot.rotate_left()
             richting = 'links'
         elif key == 'KEY_DOWN':
             robot.backward()
             richting = 'achteruit'
         elif key == 'KEY_RIGHT':
-            robot.rechts_as()
+            robot.rotate_right()
             richting = 'rechts'
         elif key =='q':
             run = False

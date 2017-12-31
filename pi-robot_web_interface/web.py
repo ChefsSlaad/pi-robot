@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import threading
-#import robo_car
+import robo_car
 from bottle import route, request, run, template, static_file
 
 
@@ -53,16 +53,21 @@ def parse_api_string(parameter):
     if parameter not in valid_responses:
         return error_returnstring
     
-    if parameter == 'stop':
-        pass 
+    car.command_list.append(parameter)
 
 
-def main_thread():
+def web_thread():
     print('starting web interface')
     run (host='0.0.0.0', port=8080, debug=True)
     return print ('exiting')
 
+def main():
+    car = robo_car.robo_car()
+    car_thread = threading.Thread(target=car.run, args=())
+    car_thread.daemon = True
+    car_thread.start()
+    web_thread()
 
 
-main_thread()
-
+if __name__ == "__main__":
+    main()
