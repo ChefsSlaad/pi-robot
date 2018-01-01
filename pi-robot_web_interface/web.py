@@ -62,8 +62,8 @@ def web_thread():
     return print ('exiting')
 
 
+
 def main():
-    car = robo_car.robo_car()
     car_thread = threading.Thread(target=car.run, args=())
     car_thread.daemon = True
     car_thread.start()
@@ -71,4 +71,5 @@ def main():
 
 
 if __name__ == "__main__":
+    car = robo_car.robo_car()
     main()

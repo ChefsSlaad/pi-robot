@@ -26,7 +26,7 @@ class robo_car:
                                'backward_left', 'backward_right')
                                
         self.left_front     = gpiozero.Motor(forward=6, backward=13)
-        self.right_front    = gpiozero.Motor(forward=12, backward=16)
+        self.right_front    = gpiozero.Motor(forward=16, backward=12)
         self.left_back      = gpiozero.Motor(forward=19, backward=26)
         self.right_back     = gpiozero.Motor(forward=20, backward=21)
 
@@ -69,10 +69,10 @@ class robo_car:
             direction = 'stop'
             if len(self.command_list) > 0:
                 if not scripted:
-                    direction = self.command_list.pop():  #most recent item from the list
+                    direction = self.command_list.pop()   #most recent item from the list
                     self.command_list = []                #empty list -> only listen for new commands 
                 else:
-                    direction = self.command_list.pop(0): #first item from the list
+                    direction = self.command_list.pop(0)  #first item from the list
             if direction == 'stop':
                 self.speed = 0
             else:
