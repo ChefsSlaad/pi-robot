@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Robot_1</title>
+    <title>robot-1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <script src="js/script.js"></script>
     <script>
@@ -29,7 +29,7 @@ function initialize_page(){
     var intervalIDs = [forward_left, forward, forward_right,
                        rotate_left, stop, rotate_right,
                        backward_left, backward, backward_right];
-
+    document.title = host;
     for (let i = 0; i < 9; i++) {
         console.log(i + ' initiating DOM ' + dom_ids[i] + ' with action ' + action_ids[i]);
         console.log(dom_ids[i], action_ids[i])
@@ -99,7 +99,7 @@ mjpeg_dest {
     height: 50vh;
     object-fit: scale-down;
     margin: 0 auto;
-    padding: 0;
+    padding: 0  ;
     display: block;
 }
     </style>

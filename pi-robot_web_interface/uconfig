@@ -1,0 +1,8 @@
+annotation
+video_stabilisation 1
+hflip 1
+vflip 1
+video_width 640
+video_height 480
+video_fps 10
+MP4Box_fps 10
