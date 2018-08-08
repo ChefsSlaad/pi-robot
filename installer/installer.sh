@@ -23,7 +23,7 @@ start 10.0.0.2 #This is the range of IPs that the hostspot will give to client d
 end 10.0.0.12
 interface wlan0 # The device uDHCP listens on.
 remaining yes
-opt dns 8.8.8.8 4.2.2.2 # The DNS servers client devices will use.
+opt dns 1.1.1.1 1.0.0.1 # The DNS servers client devices will use.
 opt subnet 255.255.255.0
 opt router 10.0.0.1 # The Pi's IP address on wlan0 which we will set up shortly.
 opt lease 300 # 5 min DHCP lease time in seconds
