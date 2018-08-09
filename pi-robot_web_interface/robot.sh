@@ -22,7 +22,7 @@ if [ $1 = "start" ];then
         exit 0
     else
         echo "starting web interface"
-        $(PI_CAM_DIR/start.sh 
+        $(PI_CAM_DIR)/start.sh 
         $(PI_WEB_DIR)/web.py > /dev/null 
         exit 0
     fi
