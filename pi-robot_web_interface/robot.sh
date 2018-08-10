@@ -22,8 +22,8 @@ if [ $1 = "start" ];then
         exit 0
     else
         echo "starting web interface"
-        $(PI_CAM_DIR)/start.sh 
-        $(PI_WEB_DIR)/web.py > /dev/null 
+        $PI_CAM_DIR/start.sh 
+        $PI_WEB_DIR/web.py > /dev/null 
         exit 0
     fi
 #stop web.py and exit script
@@ -34,7 +34,7 @@ elif [ $1 =  "stop" ];then
     else 
         echo "stopping we interface"
         pkill web.py
-        $(PI_CAM_DIR)/stop.sh 
+        $PI_CAM_DIR/stop.sh 
         exit 0
     fi
 #status web.py and exit script
